@@ -12,4 +12,3 @@ https://privatekeyfinder.io/bitcoin-puzzle
 https://youtu.be/02NZJBwy-vE?si=n8-CHf8Ep5huC_h1
 
 
-

@@ -18,7 +18,7 @@ const range = (BigInt(keyStop) - BigInt(keyStart));
 
 while (true) {
     console.clear();
-    console.log('Versão:', 6, 'Carteiras:', carteiraInit, 'até', carteiraStop);
+    console.log('Versão:', 7, 'Carteiras:', carteiraInit, 'até', carteiraStop);
     console.log('keyStart:   ', chalk.cyanBright(keyStart));
     console.log('keyStop:    ', chalk.cyanBright(keyStop));
     console.log('range:      ', chalk.cyanBright('0x' + range.toString(16)));
