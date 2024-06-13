@@ -12,8 +12,8 @@ const targetPublicKeys = walletsArray.slice(carteiraInit - 1, carteiraStop);
 
 const walletsSet = new Set(targetPublicKeys);
 
-const keyStart = ranges[carteiraInit - 2].min;
-const keyStop = ranges[carteiraStop - 0].max;
+const keyStart = ranges[carteiraInit - 1].min;
+const keyStop = ranges[carteiraStop - 1].max;
 const range = (BigInt(keyStop) - BigInt(keyStart));
 
 while (true) {
@@ -25,6 +25,8 @@ while (true) {
 
     console.log(chalk.magenta('Alvos:'));
     console.log(walletsSet);
+
+
 
     // imprimi 10 vezes antes de limpar a tela
     for (let index = 0; index < 10; index++) {
