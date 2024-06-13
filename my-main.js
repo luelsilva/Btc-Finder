@@ -12,8 +12,8 @@ const targetPublicKeys = walletsArray.slice(carteiraInit - 1, carteiraStop);
 
 const walletsSet = new Set(targetPublicKeys);
 
-const keyStart = ranges[carteiraInit - 1].min;
-const keyStop = ranges[carteiraStop - 1].max;
+const keyStart = ranges[carteiraInit - 2].min;
+const keyStop = ranges[carteiraStop - 0].max;
 const range = (BigInt(keyStop) - BigInt(keyStart));
 
 while (true) {
