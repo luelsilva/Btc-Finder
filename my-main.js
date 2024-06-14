@@ -34,10 +34,12 @@ while (true) {
         //let fatorPorcentagem = Math.random(); // deve ser um numero entre 0 e 1
         let fatorPorcentagem = gerarNumeroAleatorioEntre0e1(); // deve ser um numero entre 0 e 1
 
+        //fatorPorcentagem = 0.01;
+
         let inicialRange = range * BigInt(Math.floor(parseFloat(fatorPorcentagem) * 1e18)) / BigInt(1e18);
         let inicio = BigInt(keyStart) + BigInt(inicialRange);
 
-        console.log(printTime(), ' fator:', chalk.yellow(fatorPorcentagem), ' range start:  ', chalk.yellow(inicialRange.toString(16).padStart(17, '0')), ' Comecando em: ', chalk.yellow(inicio.toString(16)));
+        console.log(printTime(), ' fator:', chalk.yellow(fatorPorcentagem), '\t range start:  ', chalk.yellow(inicialRange.toString(16).padStart(17, '0')), ' Comecando em: ', chalk.yellow(inicio.toString(16)));
 
         //encontrarBitcoins(inicio, targetPublicKeys)
         // procura por 10000 chaves
