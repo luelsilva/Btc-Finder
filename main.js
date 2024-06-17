@@ -2,8 +2,8 @@
 import fs from 'fs';
 import chalk from 'chalk'
 import crypto from 'crypto';
-import ranges from './views/ranges.js'
-import walletsArray from './views/wallets.js';
+import ranges from './ranges.js'
+import walletsArray from './wallets.js';
 
 const carteiraInit = 66; // deve se rum numero entre 1 e 160
 const carteiraStop = 68;
