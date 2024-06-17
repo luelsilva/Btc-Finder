@@ -5,6 +5,16 @@ import crypto from 'crypto';
 import ranges from './ranges.js'
 import walletsArray from './wallets.js';
 
+
+const filePath = './keys.txt';
+if (!fs.existsSync(filePath)) {
+    try {
+        fs.writeFileSync(filePath, 'Chaves encontradas:\n', 'utf8');
+    } catch (err) {
+        console.error('Erro ao escrever no arquivo:', err);
+    }
+}
+
 const carteiraInit = 66; // deve se rum numero entre 1 e 160
 const carteiraStop = 68;
 
@@ -18,7 +28,7 @@ const range = (BigInt(keyStop) - BigInt(keyStart));
 
 while (true) {
     console.clear();
-    console.log('Versão:', 7, 'Carteiras:', carteiraInit, 'até', carteiraStop);
+    console.log('Versão:', 2.1, 'Carteiras:', carteiraInit, 'até', carteiraStop);
     console.log('keyStart:   ', chalk.cyanBright(keyStart));
     console.log('keyStop:    ', chalk.cyanBright(keyStop));
     console.log('range:      ', chalk.cyanBright('0x' + range.toString(16)));
@@ -54,7 +64,7 @@ while (true) {
                 console.log('WIF:', chalk.green(generateWIF(pkey)))
                 console.log('Public key:', chalk.green(publicKey));
 
-                const filePath = './views/keys.txt';
+                const filePath = './keys.txt';
                 const lineToAppend = `Private key: ${pkey}, WIF: ${generateWIF(pkey)}, Public key: ${publicKey}\n`;
 
                 try {
