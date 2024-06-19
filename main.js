@@ -29,9 +29,9 @@ const range = (BigInt(keyStop) - BigInt(keyStart));
 while (true) {
     console.clear();
     console.log('Versão:', 2.1, 'Carteiras:', carteiraInit, 'até', carteiraStop);
-    console.log('keyStart:   ', chalk.cyanBright(keyStart));
-    console.log('keyStop:    ', chalk.cyanBright(keyStop));
-    console.log('range:      ', chalk.cyanBright('0x' + range.toString(16)));
+    console.log('keyStart:   ', chalk.cyanBright(keyStart), BigInt(keyStart));
+    console.log('keyStop:    ', chalk.cyanBright(keyStop), BigInt(keyStop));
+    console.log('range:      ', chalk.cyanBright('0x' + range.toString(16)), range);
 
     console.log(chalk.magenta('Alvos:'));
     console.log(walletsSet);
