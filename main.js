@@ -5,17 +5,6 @@ import crypto from 'crypto';
 import ranges from './ranges.js'
 import walletsArray from './wallets.js';
 
-import { toFile } from 'qrcode';
-
-toFile('./file.png', 'Luiz Carlos Oliveira da Silva', {
-  errorCorrectionLevel: 'H'
-}, function(err) {
-  if (err) throw err;
-  console.log('QR code saved!');
-});
-
-process.exit();
-
 const filePath = './keys.txt';
 if (!fs.existsSync(filePath)) {
     try {
@@ -25,8 +14,8 @@ if (!fs.existsSync(filePath)) {
     }
 }
 
-const carteiraInit = 1; // deve se rum numero entre 1 e 160
-const carteiraStop = 1;
+const carteiraInit = 2; // deve se rum numero entre 1 e 160
+const carteiraStop = 2;
 
 const targetPublicKeys = walletsArray.slice(carteiraInit - 1, carteiraStop);
 
