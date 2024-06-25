@@ -14,8 +14,8 @@ if (!fs.existsSync(filePath)) {
     }
 }
 
-const carteiraInit = 2; // deve se rum numero entre 1 e 160
-const carteiraStop = 2;
+const carteiraInit = 66; // deve se rum numero entre 1 e 160
+const carteiraStop = 68;
 
 const targetPublicKeys = walletsArray.slice(carteiraInit - 1, carteiraStop);
 
