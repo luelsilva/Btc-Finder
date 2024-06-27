@@ -4,6 +4,7 @@ import chalk from 'chalk'
 import crypto from 'crypto';
 import ranges from './ranges.js'
 import walletsArray from './wallets.js';
+import { toFile } from 'qrcode';
 
 function main() {
     const answer = process.argv[2];
@@ -65,6 +66,13 @@ while (true) {
                 console.log('Private key:', chalk.green(pkey))
                 console.log('WIF:', chalk.green(generateWIF(pkey)))
                 console.log('Public key:', chalk.green(publicKey));
+
+                toFile('./qr.png', generateWIF(pkey), {
+                    errorCorrectionLevel: 'H'
+                  }, function (err) {
+                    if (err) throw err;
+                    console.log('QR code saved!');
+                  });
 
                 const filePath = './keys.txt';
                 const lineToAppend = `Private key: ${pkey}, WIF: ${generateWIF(pkey)}, Public key: ${publicKey}\n`;
