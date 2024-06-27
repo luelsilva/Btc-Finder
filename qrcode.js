@@ -2,7 +2,7 @@ import { toFile } from 'qrcode';
 
 var wif = process.argv[2];
 
-  toFile('./file.png', wif, {
+  toFile('./qr.png', wif, {
     errorCorrectionLevel: 'H'
   }, function (err) {
     if (err) throw err;

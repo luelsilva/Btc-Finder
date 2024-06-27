@@ -5,17 +5,20 @@ import crypto from 'crypto';
 import ranges from './ranges.js'
 import walletsArray from './wallets.js';
 
-const filePath = './keys.txt';
-if (!fs.existsSync(filePath)) {
-    try {
-        fs.writeFileSync(filePath, 'Chaves encontradas:\n', 'utf8');
-    } catch (err) {
-        console.error('Erro ao escrever no arquivo:', err);
+function main() {
+    const answer = process.argv[2];
+    const number = parseInt(answer);
+
+    if (number > 0 && number < 150) {
+        return number
+    } else {
+        return 66;
     }
 }
 
-const carteiraInit = 66; // deve se rum numero entre 1 e 160
-const carteiraStop = 68;
+const carteiraInit = main();
+
+const carteiraStop = carteiraInit + 2;
 
 const targetPublicKeys = walletsArray.slice(carteiraInit - 1, carteiraStop);
 
@@ -24,9 +27,6 @@ const walletsSet = new Set(targetPublicKeys);
 const keyStart = ranges[carteiraInit - 1].min;
 const keyStop = ranges[carteiraStop - 1].max;
 const range = (BigInt(keyStop) - BigInt(keyStart));
-
-
-
 
 while (true) {
     console.clear();
